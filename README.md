@@ -35,5 +35,5 @@ code-server --install-extension redhat.vscode-yaml
 code-server --install-extension timonwong.shellcheck
 code-server --install-extension foxundermoon.shell-format
 code-server --install-extension  ms-azuretools.vscode-docker
-
+code-server --install-extension rebornix.ruby
 ```
