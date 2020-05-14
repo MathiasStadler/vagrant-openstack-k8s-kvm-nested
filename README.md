@@ -29,4 +29,6 @@ code-server --install-extension streetsidesoftware.code-spell-checker
 code-server --install-extension davidanson.vscode-markdownlint
 code-server --install-extension eamodio.gitlens
 code-server --install-extension gruntfuggly.todo-tree
+# create folder for todo-tree extension
+mkdir -p /home/coder/.local/share/code-server/User/globalStorage/gruntfuggly.todo-tree
 ```
