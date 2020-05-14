@@ -31,4 +31,9 @@ code-server --install-extension eamodio.gitlens
 code-server --install-extension gruntfuggly.todo-tree
 # create folder for todo-tree extension
 mkdir -p /home/coder/.local/share/code-server/User/globalStorage/gruntfuggly.todo-tree
+code-server --install-extension redhat.vscode-yaml
+code-server --install-extension timonwong.shellcheck
+code-server --install-extension foxundermoon.shell-format
+code-server --install-extension  ms-azuretools.vscode-docker
+
 ```
