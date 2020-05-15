@@ -27,6 +27,7 @@ git config --global credential.helper 'cache --timeout=3600'
 # add extension
 sudo apt-get update && sudo apt-get install rubygems build-essential
 sudo gem install rufo
+code-server --install-extension siliconsenthil.rufo-vscode
 code-server --install-extension streetsidesoftware.code-spell-checker
 code-server --install-extension davidanson.vscode-markdownlint
 code-server --install-extension eamodio.gitlens
@@ -34,11 +35,11 @@ code-server --install-extension gruntfuggly.todo-tree
 # create folder for todo-tree extension
 mkdir -p /home/coder/.local/share/code-server/User/globalStorage/gruntfuggly.todo-tree
 code-server --install-extension redhat.vscode-yaml
+sudo apt-get install -y shellcheck
 code-server --install-extension timonwong.shellcheck
 code-server --install-extension foxundermoon.shell-format
 code-server --install-extension  ms-azuretools.vscode-docker
 code-server --install-extension rebornix.ruby
-code-server --install-extension siliconsenthil.rufo-vscode
 code-server --list-extensions
 ```
 
