@@ -25,6 +25,8 @@ git config --global user.EMAIL "email@mathias-stadler.de"
 git config --global credential.helper 'cache --timeout=3600'
 
 # add extension
+sudo apt-get update && sudo apt-get install rubygems build-essential
+sudo gem install rufo
 code-server --install-extension streetsidesoftware.code-spell-checker
 code-server --install-extension davidanson.vscode-markdownlint
 code-server --install-extension eamodio.gitlens
