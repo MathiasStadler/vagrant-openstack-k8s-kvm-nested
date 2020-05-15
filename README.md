@@ -36,13 +36,14 @@ code-server --install-extension timonwong.shellcheck
 code-server --install-extension foxundermoon.shell-format
 code-server --install-extension  ms-azuretools.vscode-docker
 code-server --install-extension rebornix.ruby
+code-server --install-extension siliconsenthil.rufo-vscode
 code-server --list-extensions
 ```
 
 
 ## install vagrant on centos/8
 
-- dowmlod for 
+- dowmlod for
 
 ```bash
 #!/bin/bash
