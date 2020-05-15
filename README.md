@@ -45,6 +45,7 @@ code-server --list-extensions
 - dowmlod for 
 
 ```bash
+#!/bin/bash
 # switch to tmp
 cd && cd /tmp
 # download
