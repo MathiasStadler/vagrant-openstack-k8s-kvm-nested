@@ -9,7 +9,6 @@ Vagrant.configure("2") do |config|
       domain.cpu_mode = "host-passthrough"
       domain.machine_virtual_size = 60
     end
-    # TODO check old config.vm.synced_folder "nested-host/", "/home/vagrent/nested-host"
     config.vm.provision "shell", path: "scripts/installVagrant.sh"
   end
 end
