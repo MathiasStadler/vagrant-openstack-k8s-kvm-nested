@@ -23,5 +23,12 @@ bugtracker_url=http://bugs.centos.org/set_project.php?project_id=23&ref=http://b
 distroverpkg=centos-release
 EOF
 
+# 
+sudo yum clean metadata
+
 # clean cache
 sudo yum clean expire-cache
+
+# https://blog.packagecloud.io/eng/2015/05/05/using-apt-cacher-ng-with-ssl-tls/
+# https://www.cflee.com/posts/troubleshooting-apt-cacher-ng/
+# https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=944143

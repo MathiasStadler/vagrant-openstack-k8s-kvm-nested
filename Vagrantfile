@@ -10,6 +10,7 @@ Vagrant.configure("2") do |config|
       domain.machine_virtual_size = 60
     end
     config.vm.provision "setYumProxy", path: "scripts/setYumProxy.sh"
+    config.vm.provision "setYumProxy", path: "scripts/updateSystem.sh"
     config.vm.provision "installVagrnt", path: "scripts/installVagrant.sh"
     
   end
