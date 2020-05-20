@@ -8,8 +8,8 @@ Vagrant.configure("2") do |config|
       domain.volume_cache = "none"
       domain.cpu_mode = "host-passthrough"
       domain.machine_virtual_size = 60
-    end
-    config.vm.provision :shell do |s|
+    
+    config.vm.provision "env", type: "shell" do |s|
       s.env = { http_proxy: ENV["http_proxy"], https_proxy: ENV["https_proxy"] }
     end
 
