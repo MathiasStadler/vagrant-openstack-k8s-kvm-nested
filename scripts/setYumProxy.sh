@@ -1,5 +1,9 @@
 #!/bin/bash
+# install nc for proxy ping
+sudo dnf install -y nmap
 
+# ping to proxy
+if nc -zvn 192.168.178.29 3128; then
 # write proxy config 
 cat << EOF |sudo tee /etc/yum.conf
 [main]
@@ -22,7 +26,9 @@ installonly_limit=5
 bugtracker_url=http://bugs.centos.org/set_project.php?project_id=23&ref=http://bugs.centos.org/bug_report_page.php?category=yum
 distroverpkg=centos-release
 EOF
-
+else 
+echo "set no proxy"
+fi
 # 
 sudo yum clean metadata
 
