@@ -9,9 +9,9 @@ Vagrant.configure("2") do |config|
       domain.cpu_mode = "host-passthrough"
       domain.machine_virtual_size = 60
     end
-    config.vm.provision "setYumProxy", path: "scripts/setYumProxy.sh"
-    config.vm.provision "setYumProxy", path: "scripts/updateSystem.sh"
-    config.vm.provision "installVagrnt", path: "scripts/installVagrant.sh"
+    config.vm.provision "setYumProxy", type: "shell" ,path: "scripts/setYumProxy.sh"
+    config.vm.provision "setYumProxy", type: "shell" ,path: "scripts/setYumProxy.sh"
+    config.vm.provision "installVagrnt", type: "shell", path: "scripts/installVagrant.sh"
     
   end
 end
