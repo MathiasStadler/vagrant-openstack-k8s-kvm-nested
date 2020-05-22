@@ -1,3 +1,11 @@
+#from here https://github.com/hashicorp/vagrant/issues/7015
+$set_environment_variables = <<SCRIPT
+# squid environment variables.
+export http_proxy=#{ENV['http_proxy']}
+export https_proxy=#{ENV['https_proxy']}
+SCRIPT
+
+
 Vagrant.configure("2") do |config|
   config.vm.define :nested_host do |nested_host|
     nested_host.vm.box = "centos/8"
@@ -10,10 +18,7 @@ Vagrant.configure("2") do |config|
       domain.machine_virtual_size = 60
     end
     # from here https://stackoverflow.com/questions/19648088/pass-environment-variables-to-vagrant-shell-provisioner
-    config.vm.provision "setEnv" , type: "shell" , run: "always" do |s|
-      s.inline = "echo \"set http_proxy => $http_proxy and https_proxy => $https_proxy\" "
-      s.env = { http_proxy: ENV["http_proxy"], https_proxy: ENV["https_proxy"] }
-    end
+      config.vm.provision "shell", inline: $set_environment_variables, run: "always"
 
     config.vm.provision "getEnv" , type: "shell" , run: "always" do |s|
       s.inline = "env"
