@@ -27,7 +27,7 @@ Vagrant.configure("2") do |config|
     end
 
     config.vm.provision "setYumProxy", type: "shell", path: "scripts/setYumProxy.sh"
-    config.vm.provision "setYumProxy", type: "shell", path: "scripts/updateSystem.sh"
+    config.vm.provision "updateSystem", type: "shell", path: "scripts/updateSystem.sh"
     config.vm.provision "installVagrant", type: "shell", path: "scripts/installVagrant.sh"
   end
 end
