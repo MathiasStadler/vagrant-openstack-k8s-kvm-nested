@@ -15,6 +15,10 @@ Vagrant.configure("2") do |config|
       s.env = { http_proxy: ENV["http_proxy"], https_proxy: ENV["https_proxy"] }
     end
 
+    config.vm.provision "getEnv" , type: "shell" , run: "always" do |s|
+      s.inline = "env"
+    end
+
     config.vm.provision "setYumProxy", type: "shell", path: "scripts/setYumProxy.sh"
     config.vm.provision "setYumProxy", type: "shell", path: "scripts/updateSystem.sh"
     config.vm.provision "installVagrant", type: "shell", path: "scripts/installVagrant.sh"
