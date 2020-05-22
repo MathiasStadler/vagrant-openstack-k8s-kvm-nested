@@ -18,7 +18,7 @@ Vagrant.configure("2") do |config|
       domain.machine_virtual_size = 60
     end
     # from here https://stackoverflow.com/questions/19648088/pass-environment-variables-to-vagrant-shell-provisioner
-      config.vm.provision "shell", inline: $set_environment_variables, run: "always"
+      config.vm.provision "setEnv" , type: "shell", inline: $set_environment_variables, run: "always"
 
     config.vm.provision "getEnv" , type: "shell" , run: "always" do |s|
       s.inline = "env"
