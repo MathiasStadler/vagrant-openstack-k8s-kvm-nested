@@ -1,8 +1,10 @@
 #from here https://github.com/hashicorp/vagrant/issues/7015
 $set_environment_variables = <<SCRIPT
+tee "/etc/profile.d/myvars.sh" > "/dev/null" <<EOF
 # squid environment variables.
 export http_proxy=#{ENV['http_proxy']}
 export https_proxy=#{ENV['https_proxy']}
+EOF
 SCRIPT
 
 
